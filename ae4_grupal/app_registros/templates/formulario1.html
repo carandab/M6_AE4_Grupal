@@ -1,0 +1,19 @@
+{% extends 'base.html' %}   
+{% load static %}
+{% block title %}Registrar Evento{% endblock %}
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="{{ form.nombre.id_for_label }}" class="form-label my-2">Nombre:</label>
+        {{ form.nombre }}<br>
+
+        <label for="{{ form.fecha.id_for_label }}" class="form-label my-2">Fecha:</label>
+        {{ form.fecha }}<br>
+
+        <label for="{{ form.ubicacion.id_for_label }}" class="form-label my-2">Ubicación:</label>
+        {{ form.ubicacion }}<br>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+{% endblock %}

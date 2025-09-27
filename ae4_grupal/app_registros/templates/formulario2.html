@@ -1,0 +1,17 @@
+{% extends 'base.html' %}   
+{% load static %}
+{% block title %}Registrar Participantes{% endblock %}
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="{{ form.nombre.id_for_label }}" class="form-label">Nombre:</label>
+    {{ form.nombre }}<br>
+
+    <label for="{{ form.correo.id_for_label }}" class="form-label">Correo:</label>
+    {{ form.correo }}<br>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+{% endblock %}
