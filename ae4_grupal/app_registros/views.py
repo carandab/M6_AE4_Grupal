@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .forms import EventoForm, ParticipanteForm 
 
+def inicio(request):
+    return render(request, 'inicio.html')
+
 def registrar_evento(request):
     if request.method == 'POST':
         form = EventoForm(request.POST)
@@ -22,10 +25,11 @@ def registrar_persona(request):
         if form.is_valid():
             # Procesar datos
             nombre = form.cleaned_data['nombre']
-            email = form.cleaned_data['email']
+            correo = form.cleaned_data['correo']
             # Realizar algunaacción con los datos, como enviar un correo
             return render(request, 'formulario_exito.html', {'nombre': nombre})
     else:
         form = ParticipanteForm()
     
     return render(request, 'formulario2.html', {'form': form})
+

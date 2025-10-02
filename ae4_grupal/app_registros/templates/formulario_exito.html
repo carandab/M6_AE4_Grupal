@@ -1,8 +1,18 @@
-<!doctype html>
-<html>
-<head><meta charset="utf-8"><title>Enviado</title></head>
-<body>
-  <h1>¡Gracias! {{ nombre }} ha sido registrado con éxito</h1>
-  <a href="{% url 'formulario1' %}">Volver</a>
-</body>
-</html>
+{% extends 'base.html' %}   
+{% load static %}
+{% block title %}Registro Exitoso{% endblock %}
+{% block content %}
+
+<div class="container text-center my-5 py-4 ">
+    <div class="alert alert-success" role="alert">
+        <h1 class="display-4">¡Registro Exitoso!</h1>
+        <p class="lead mt-3">{{ nombre }} ha sido registrado correctamente.</p>
+    </div>
+    
+    <div class="mt-4">
+        <a href="javascript:history.back()" id="btn-eventos" class="btn btn-lg px-5 py-3 me-sm-4">Volver</a>
+        <a href="{% url 'inicio' %}" class="btn btn-outline-secondary btn-lg px-5 py-3">Ir al Inicio</a>
+    </div>
+</div>
+
+{% endblock %}
